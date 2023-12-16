@@ -33,4 +33,8 @@ public class Set<T>  {
     public void clear(){
         map.clear();
     }
+
+    public boolean contains(T value){
+        return map.containsKey(value);
+    }
 }

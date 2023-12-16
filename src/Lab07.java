@@ -10,5 +10,6 @@ public class Lab07 {
 
         s2.addAll(s);
 
+        System.out.println(s2.contains(0));
     }
 }
