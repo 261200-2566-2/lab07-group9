@@ -5,11 +5,21 @@ public class Lab07 {
         Set<Integer> s = new Set<>();
         Set<Integer> s2 = new Set<>();
         s.add(1);
+        s.add(2);
+        s.add(3);
+        s.add(4);
 
-        s2.add(2);
 
-        s2.addAll(s);
+        s2.add(6);
+        s2.add(5);
 
-        System.out.println(s2.contains(0));
+
+
+        //s2.addAll(s);
+
+        //s.remove(1);
+        System.out.println(s.contains(6));
+        //System.out.println(s.retainAll(s2));
+        //System.out.println(s.contains(1));
     }
 }
