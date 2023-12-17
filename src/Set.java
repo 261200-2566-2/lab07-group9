@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Spliterator;
 
 public class Set<T>  {
     private final HashMap<T, Object> map;
@@ -9,17 +10,9 @@ public class Set<T>  {
         map = new HashMap<>();
     }
 
-    public int size(){
-        return map.size();
-    }
-
     public boolean add(T value){
         return map.put(value,dummy) == null;
         //ถ้ายังไม่มีตัวจะเพิ่ม ให้ put (== null) return true แต่ถ้ามีแล้ว (!= null) return false
-    }
-
-    public Iterator<T> iterator() {
-        return map.keySet().iterator();
     }
 
     //mean U
@@ -56,8 +49,22 @@ public class Set<T>  {
         return result;
     }
 
+    public boolean equals(Object ob){
+        return false;
+        //return default for next lab
+    }
+
+    public int hashCode(){
+        return 0;
+        //return default for next lab
+    }
+
     public boolean isEmpty(){
         return map.isEmpty();
+    }
+
+    public Iterator<T> iterator() {
+        return map.keySet().iterator();
     }
 
     public boolean remove(T value){
@@ -84,5 +91,24 @@ public class Set<T>  {
             }
         }
         return result;
+    }
+
+    public int size(){
+        return map.size();
+    }
+
+    Spliterator<T> spliterator(){
+        return null;
+        //return default for next lab
+    }
+
+    public Object[] toArray(){
+        return null;
+        //return default for next lab
+    }
+
+    public <T> T[] toArray(T[] a) {
+        return null;
+        //return default for next lab
     }
 }
