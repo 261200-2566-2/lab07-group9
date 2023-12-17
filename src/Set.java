@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class Set<T>  {
     private final HashMap<T, Object> map;
@@ -15,6 +16,10 @@ public class Set<T>  {
     public boolean add(T value){
         return map.put(value,dummy) == null;
         //ถ้ายังไม่มีตัวจะเพิ่ม ให้ put (== null) return true แต่ถ้ามีแล้ว (!= null) return false
+    }
+
+    public Iterator<T> iterator() {
+        return map.keySet().iterator();
     }
 
     //mean U
@@ -69,14 +74,15 @@ public class Set<T>  {
         return result;
     }
 
-//    public boolean retainAll(Set<T> s2){
-//        boolean result = false;
-//        for(T element : s2.map.keySet()){
-//            if(contains(element)){
-//                this.remove(element);
-//                result = true;
-//            }
-//        }
-//        return result;
-//    }
+    public boolean retainAll(Set<T> s2){
+        boolean result = false;
+        Iterator <T> thisSet = iterator();
+        while(thisSet.hasNext()){
+            if(!s2.contains(thisSet.next())){
+                thisSet.remove();
+                result = true;
+            }
+        }
+        return result;
+    }
 }
