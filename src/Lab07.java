@@ -51,5 +51,6 @@ public class Lab07 {
 //        System.out.println(s2.retainAll(s));
 //        System.out.println(s2.size());
 //        System.out.println(s2.contains(3));
+//        System.out.println(s2.contains(1));
     }
 }

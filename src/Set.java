@@ -16,7 +16,7 @@ public class Set<T>  {
     }
 
     //mean U
-    public boolean addAll(Set<T> s2){
+    public boolean addAll(Set<? extends T> s2){
         boolean result = false;
         for (T element: s2.map.keySet()) {
             //keySet for call all element in s2
@@ -36,7 +36,7 @@ public class Set<T>  {
         return map.containsKey(value);
     }
 
-    public boolean containsAll(Set<T> s2){
+    public boolean containsAll(Set<? extends T> s2){
         boolean result = false;
         for(T element : s2.map.keySet()){
             if(contains(element)){
@@ -71,7 +71,7 @@ public class Set<T>  {
         return map.remove(value) != null;
     }
 
-    public boolean removeAll(Set<T> s2){
+    public boolean removeAll(Set<? extends T> s2){
         boolean result = false;
         for (T element: s2.map.keySet()) {
             if(remove(element)){
@@ -81,11 +81,11 @@ public class Set<T>  {
         return result;
     }
 
-    public boolean retainAll(Set<T> s2){
+    public boolean retainAll(Set<? extends T> s2){
         boolean result = false;
         Iterator <T> thisSet = iterator();
         while(thisSet.hasNext()){
-            if(!s2.contains(thisSet.next())){
+            if(!s2.map.containsKey(thisSet.next())){
                 thisSet.remove();
                 result = true;
             }
